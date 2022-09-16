@@ -34,7 +34,6 @@ class _WorldStateteState extends State<WorldStatete>
 
   @override
   Widget build(BuildContext context) {
-    StateServices stateServices = StateServices();
     return Scaffold(
         body: SafeArea(
       child: Padding(
@@ -44,9 +43,9 @@ class _WorldStateteState extends State<WorldStatete>
             height: MediaQuery.of(context).size.height * .01,
           ),
           FutureBuilder(
-              future: stateServices.fetchWorldApi(),
-              builder: (context, AsyncSnapshot<Worls_State> snapshot) {
-                if (snapshot.hasData) {
+              future: fetchApi(),
+              builder: (context, AsyncSnapshot<WorldModelsState> snapshot) {
+                if (!snapshot.hasData) {
                   return Expanded(
                     flex: 1,
                     child: SpinKitFadingCircle(

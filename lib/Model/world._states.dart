@@ -1,4 +1,4 @@
-class Worls_State {
+class WorldModelsState {
   int? updated;
   int? cases;
   int? todayCases;
@@ -9,7 +9,7 @@ class Worls_State {
   int? active;
   int? critical;
   int? casesPerOneMillion;
-  int? deathsPerOneMillion;
+  double? deathsPerOneMillion;
   int? tests;
   double? testsPerOneMillion;
   int? population;
@@ -21,7 +21,7 @@ class Worls_State {
   double? criticalPerOneMillion;
   int? affectedCountries;
 
-  Worls_State(
+  WorldModelsState(
       {this.updated,
       this.cases,
       this.todayCases,
@@ -44,7 +44,7 @@ class Worls_State {
       this.criticalPerOneMillion,
       this.affectedCountries});
 
-  Worls_State.fromJson(Map<String, dynamic> json) {
+  WorldModelsState.fromJson(Map<String, dynamic> json) {
     updated = json['updated'];
     cases = json['cases'];
     todayCases = json['todayCases'];
