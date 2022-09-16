@@ -37,22 +37,20 @@ class _CountriesListState extends State<CountriesList> {
           Expanded(
               child: FutureBuilder(
                   future: countriesApi(),
-                  builder:
-                      (context, AsyncSnapshot<List<CountriesModel>> snapshot) {
+                  builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
                     if (!snapshot.hasData) {
                       return Text('Loading...');
                     } else {
                       return ListView.builder(
-                          itemCount: countries.length,
+                          itemCount: 1,
                           itemBuilder: (context, index) {
                             return Column(
                               children: [
                                 ListTile(
-                                  leading: Image(
-                                      image: NetworkImage(snapshot.data![index]
-                                          .countryInfo!.flag!.length
-                                          .toString())),
-                                )
+                                    leading: Image(
+                                  image: NetworkImage(snapshot.data![index]
+                                      ['countryInfo']['flag']),
+                                ))
                               ],
                             );
                           });
