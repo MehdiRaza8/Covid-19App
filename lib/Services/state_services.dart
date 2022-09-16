@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:covid19app/Model/world._states.dart';
-import 'package:covid19app/Services/utilities/app_url.dart';
+
 import 'package:covid19app/Views.dart/world_states.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
